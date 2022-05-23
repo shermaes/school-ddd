@@ -1,28 +1,26 @@
 package com.sofkau.school.director.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofkau.school.director.values.Activity;
-import com.sofkau.school.director.values.Agenda;
-import com.sofkau.school.director.values.Auditorium;
-import com.sofkau.school.supervisor.values.SupervisorID;
+import com.sofkau.school.director.values.*;
+
 
 
 public class TeachingCenterAdded extends DomainEvent {
-    private final SupervisorID supervisorID;
     private final Auditorium auditorium;
     private final Agenda agenda;
     private final Activity activity;
+    private final TeachingCenterID entityId;
 
-    public TeachingCenterAdded(SupervisorID supervisorID, Auditorium auditorium, Agenda agenda, Activity activity) {
+    public TeachingCenterAdded(TeachingCenterID entityId, Auditorium auditorium, Agenda agenda, Activity activity) {
         super("SherMaestre.Director.TeachingCenterAdded");
-        this.supervisorID = supervisorID;
+        this.entityId = entityId;
         this.auditorium = auditorium;
         this.agenda = agenda;
         this.activity = activity;
     }
 
-    public SupervisorID getSupervisorID() {
-        return supervisorID;
+    public TeachingCenterID getEntityId() {
+        return entityId;
     }
 
     public Auditorium getAuditorium() {

@@ -2,8 +2,10 @@ package com.sofkau.school.supervisor;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import com.sofkau.school.supervisor.events.ClassroomPresidentChanged;
 import com.sofkau.school.supervisor.events.StudentAdded;
 import com.sofkau.school.supervisor.events.SupervisorCreated;
+import com.sofkau.school.supervisor.events.TeacherAdded;
 import com.sofkau.school.supervisor.values.*;
 
 import javax.lang.model.element.Name;
@@ -44,8 +46,18 @@ public class Supervisor extends AggregateEvent<SupervisorID> {
          //here we append this change in order to create the event / applying that event into this aggregate
          appendChange(new StudentAdded(entityId, name, yearsApproved, grades)).apply();
      }
+    public void addTeacher(TeacherID entityId, YearsOfExperience yearsOfExperience, Name name, Subject subject){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(name);
+        Objects.requireNonNull(yearsOfExperience);
+        Objects.requireNonNull(subject);
+        //here we append this change in order to create the event / applying that event into this aggregate
+        appendChange(new TeacherAdded(entityId, yearsOfExperience, name, subject)).apply();
+    }
 
-
+    public void changeClasRoomPresident(ClasroomPresident clasroomPresident){
+        appendChange(new ClassroomPresidentChanged(clasroomPresident)).apply();
+    }
 
 
     //these are my getters we need to remove the get word as a convention

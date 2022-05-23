@@ -1,28 +1,26 @@
 package com.sofkau.school.director.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofkau.school.director.values.Agenda;
-import com.sofkau.school.director.values.Delegate;
-import com.sofkau.school.director.values.DirectorID;
-import com.sofkau.school.director.values.Topic;
+import com.sofkau.school.director.values.*;
 
 
 public class SchoolCouncilAdded extends DomainEvent {
-    private final DirectorID directorID;
+    private final SchoolCouncilID entityId;
     private final Delegate delegate;
     private final Topic topic;
     private final Agenda agenda;
 
-    public SchoolCouncilAdded(DirectorID directorID, Delegate delegate, Topic topic, Agenda agenda) {
+    public SchoolCouncilAdded(SchoolCouncilID entityId, Delegate delegate, Topic topic, Agenda agenda) {
         super("shermaestre.Director.SchoolCouncilAdded");
-        this.directorID = directorID;
+        this.entityId = entityId;
+
         this.delegate = delegate;
         this.topic = topic;
         this.agenda = agenda;
     }
 
-    public DirectorID getDirectorID() {
-        return directorID;
+    public SchoolCouncilID getEntityId() {
+        return entityId;
     }
 
     public Delegate getDelegate() {
