@@ -1,16 +1,15 @@
-package com.sofkau.school.supervisor.events;
+package com.sofkau.school.director.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkau.school.supervisor.values.ClasroomPresident;
 
 
-public class ClassroomPresidentChanged extends DomainEvent {
+public class DirectorCreated extends DomainEvent {
 
     private final ClasroomPresident clasroomPresident;
 
-    public ClassroomPresidentChanged(ClasroomPresident clasroomPresident) {
-        super("SherMaestre.supervisor.ClasroomPresidentChanged");
-
+    public DirectorCreated(ClasroomPresident clasroomPresident) {
+        super("shermaestre.Director.DirectorCreated");
         this.clasroomPresident = clasroomPresident;
     }
 

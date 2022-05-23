@@ -14,7 +14,7 @@ public class StudentAdded extends DomainEvent {
     private final StudentID entityId;
 
     public StudentAdded(StudentID entityId, Name name, YearsApproved yearsApproved, Grades grades){
-        super("SherMaestre.supervisor.StudentAdded");
+        super("SherMaestre.Supervisor.StudentAdded");
         this.yearsApproved = yearsApproved;
         this.name = name;
         this.grades = grades;

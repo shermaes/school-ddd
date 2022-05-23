@@ -6,7 +6,6 @@ import com.sofkau.school.supervisor.values.DesignatedTeacher;
 
 public class SupervisorCreated extends DomainEvent {
 
- //why is this final?
     private final ClasroomPresident clasroomPresident;
     private final DesignatedTeacher designatedTeacher;
 
