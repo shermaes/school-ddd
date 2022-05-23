@@ -1,12 +1,12 @@
-package com.sofkau.school.supervisor.commands;
+package com.sofkau.school.director.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.sofkau.school.supervisor.values.ClasroomPresident;
 
-public class ChangeClassroomPresident extends Command {
+public class CreateDirector extends Command {
     private final ClasroomPresident clasroomPresident;
 
-    public ChangeClassroomPresident(ClasroomPresident clasroomPresident) {
+    public CreateDirector(ClasroomPresident clasroomPresident) {
         this.clasroomPresident = clasroomPresident;
     }
 
