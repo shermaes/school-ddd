@@ -1,18 +1,17 @@
-package com.sofkau.school.supervisor.values;
+package com.sofkau.school.director.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-
 import java.util.Objects;
 
-public class ClasroomPresident implements ValueObject<String> {
+public class Auditorium implements ValueObject<String> {
 
     private final String value;
 
-    public ClasroomPresident(String value) {
+    public Auditorium(String value) {
         this.value = Objects.requireNonNull(value);
         if (this.value.isBlank()) {
-            throw new IllegalArgumentException("The Clasroom President name can not be empty");
+            throw new IllegalArgumentException("The Auditorium name can not be empty");
         }
     }
     @Override
@@ -24,8 +23,8 @@ public class ClasroomPresident implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ClasroomPresident clasroomPresident = (ClasroomPresident) o;
-        return value.equals(clasroomPresident.value);
+        Auditorium auditorium = (Auditorium) o;
+        return value.equals(auditorium.value);
     }
 
     @Override
@@ -33,3 +32,4 @@ public class ClasroomPresident implements ValueObject<String> {
         return Objects.hash(value);
     }
 }
+

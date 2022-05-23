@@ -1,7 +1,6 @@
-package com.sofkau.school.supervisor.values;
+package com.sofkau.school.director.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-
 
 import java.util.Objects;
 
